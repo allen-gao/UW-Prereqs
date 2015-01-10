@@ -1,0 +1,17 @@
+<html ng-app="prereqsApp">
+
+<head>
+	<title>UW Prereqs</title>
+	<script src="angular.min.js"></script>
+	<script src="ui-bootstrap-tpls-0.12.0.min"></script>
+	<script src="prereqsCtrl.js"></script>
+</head>
+
+<body ng-controller="prereqsCtrl">
+	<ul>
+		<li ng-repeat="course in courses">
+			<p>{{course}}</p>
+		</li>
+	</ul>
+</body>
+</html>
