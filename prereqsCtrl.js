@@ -8,6 +8,10 @@ prereqsApp.controller('prereqsCtrl', function ($scope, $http) {
 	$scope.searchCourse = function(selected_subject) {
 		$http.get('https://api.uwaterloo.ca/v2/courses/' + $scope.selected_subject +'.json?key=841086bf587e62c3eee2711d22043b27').success(function(data) {
 			$scope.courses = data.data;
+			if ($scope.courses.length == 0) {
+				$scope.courses[0] = {'subject': 'No courses found for this subject.', 
+				'catalog_number': 'This is likely an outdated subject code.'};
+			}
 		});
 	}
 });
