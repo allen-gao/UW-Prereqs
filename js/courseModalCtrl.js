@@ -49,6 +49,11 @@ angular.module('prereqsApp').controller('courseModalCtrl', function ($scope, $mo
 		$scope.prereqsList = response.data.data.prerequisites_parsed;
 		$scope.prereqStr = parsePre($scope.prereqsList, 0);
 	});
+
+	function scroll() {
+    	$window.scrollBy(0,50); // horizontal and vertical scroll increments
+    	scrolldelay = setTimeout('pageScroll()',100); // scrolls every 100 milliseconds
+}
 		
 
 	$scope.close = function () {

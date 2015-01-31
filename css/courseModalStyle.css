@@ -7,14 +7,25 @@
 	color: white;
 }
 
+.courseHead {
+	text-align: center;
+}
 
 #horizontalScroll {
 	white-space: nowrap;
-	width: 400px;
 	overflow-x: auto;
-	background-color: grey;
+	background-color: #5cb85c;
+	color: white;
 }
 
+#horizontalScrollDiv {
+	display: inline;
+	width: 100px;
+}
+
+#horizontalSlider {
+	display: inline;
+}
 
 .listItems {
 	display: inline block;

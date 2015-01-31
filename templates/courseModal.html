@@ -1,12 +1,16 @@
 <div class="container-fluid modalContainer">
-	<h2 class="courseHead">{{course.subject}} {{course.catalog_number}} <h2><br><br>
+	<h2 class="courseHead">{{course.subject}} {{course.catalog_number}} <h2>
 	<!--<h2>{{prereqStr}}<h2>-->
 	<br>
-	<ul class="list-inline" id="horizontalScroll">
-		<li class="listItems" ng-repeat="course in courses">
-			<div>{{course}}</div>
-		</li>
-	</ul>
+	<div id="horizontalSlider">
+		<div id="horizontalScrollDiv">
+			<ul class="list-inline" id="horizontalScroll">
+				<li class="listItems" ng-repeat="course in courses">
+					<div>{{course}}</div>
+				</li>
+			</ul>
+		</div>
+	</div>
 	<br>
-    <button class="btn btn-default pull-right" id="courseModalCloseButton" ng-click="close()">Close</button>
+    <button class="btn btn-default pull-right" id="courseModalCloseButton" ng-click="fn()">Close</button>
 </div>
