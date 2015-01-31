@@ -25,13 +25,15 @@
 			<input class="txtbox" ng-model="courseCatalog.catalog_number" placeholder="Course ID">
 			<input id="sub" class="btn btn-default" type="button" value="Submit" ng-click="lookupSubject(selectedSubject)">
 		</div>
-		<ul class="listCourse">
-			<li ng-repeat="course in courses | filter: courseCatalog">
+		<div class="listBox">
+		<ul class="list-inline">
+			<li ng-repeat="course in courses | filter: courseCatalog" class="courseLI">
 				<div ng-click="openCourseModal(course)">
-					{{course.subject}} {{course.catalog_number}}
+					<strong>{{course.subject}} {{course.catalog_number}}</strong>
 				</div>
 			</li>
 		</ul>
+		</div>
 	</div>
 </body>
 
