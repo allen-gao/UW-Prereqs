@@ -1,28 +1,12 @@
-<html ng-app="prereqsApp">
+<html ng-app="prereqsApp" ng-controller="prereqsCtrl">
 
 <head>
-	<title>UW Prereqs</title>
-	<!-- Libs -->
 	<script src="angular.min.js"></script>
-	<script src="ui-bootstrap-tpls-0.12.0.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
-	
-<!--<script src="prereqsApp.js"></script>-->
 	<script src="prereqsCtrl.js"></script>
-	<script src="courseModalCtrl.js"></script>
 </head>
 
-<body ng-controller="prereqsCtrl">
-	Select a subject: <select ng-model="selected_subject">
-	<option ng-repeat="subject in subjects">{{subject.subject}}</option>
-	<input ng-model="catalog_query.catalog_number">
-	<button type="button" class="btn btn-info" ng-click="searchCourse(selected_subject)">Search</button>
-	<ul>
-		<li ng-repeat="course in courses | filter:catalog_query">
-			<div ng-click="openModal(course.course_id)">
-				{{course.subject}} {{course.catalog_number}}
-			</div>
-		</li>
-	</ul>
+<body>
+	{{lol}}
 </body>
+
 </html>
