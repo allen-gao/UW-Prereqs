@@ -1,19 +1,10 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="css/common.css">
 </head>
-<div>
-	<div class="content container">
-		<div class="pre-req-col">
-		test stuff
-		</div>
-		<div class="pre-req-col">
-		test stuff 2
-		</div>
-		<div class="pre-req-col">
-		test stuff 3
-		</div>
-	</div>
-    {{sample}}
+<div  class="container">
+	{{course.subject}} {{course.catalog_number}} <hr>
+	{{prereqStr}}
+	<br>
     <button class="btn btn-default" ng-click="cancel()">Cancel</button>
     <button class="btn btn-default" ng-click="ok()">OK</button>
 </div>

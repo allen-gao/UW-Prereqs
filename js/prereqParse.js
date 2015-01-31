@@ -1,29 +1,23 @@
 //parsePre: Array [Num, String, String....] (Empty String) -> NULL
 //Effects: Logs the elements in the array
 var parsePre = function (pre, tabStr){
-  for(var i = 0; i < pre.length; i++){
-    var arr = [];
-    if(typeof pre[i] === 'number'){
-      arr[i] = tabStr + pre[i] + "of: ";
-      console.log(arr[i]);
-    }
-    else if(typeof pre[i] === 'string'){
-      if(i === pre.length - 1){
-          arr[i] = tabStr + pre[i]
-          console.log(arr[i]);
+    for(var i = 0; i < pre.length; i++){
+      if(typeof pre[i] === 'number'){
+        console.log(tabStr + pre[i] + "of: ");
+      }
+      else if(typeof pre[i] === 'string'){
+        if(i === pre.length - 1){
+            console.log(tabStr + pre[i]);
+        }
+        else {
+          console.log(tabStr + pre[i] + ", ");
+        }
       }
       else {
-        arr[i] = tabStr + pre[i] + ", ";
-        console.log(arr[i]);
+        parsePre(pre[i], tabStr + "  ");
       }
     }
-    else {
-      arr[i] = parsePre(pre[i], tabStr + "  ");
-      console.log(arr[i]);
-      return arr[i];
-    }
   }
-}
 var stuff = {
   "subject":"PHYS",
   "catalog_number":"375",
@@ -36,4 +30,4 @@ var stuff = {
 };
 var pr = stuff.prerequisites_parsed;
 
-console.log(parsePre(pr, ""));
+parsePre(pr, "");
