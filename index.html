@@ -14,8 +14,21 @@
 <body>
 	<div class="container">
 		<h1>uWaterloo Prereqs</h1>
-		<input type="text" ng-model="input">
-		<input class="btn btn-default" type="button" value="Submit" ng-click="openCourseModal()">
+		<select class="form-control" ng-model="selectedSubject">
+			<option ng-repeat="courseSubject in courseSubjects">{{courseSubject.subject}}</option>
+		</select>
+		<input class="btn btn-default" type="button" value="Submit" ng-click="lookupSubject(selectedSubject)">
+		
+		<input ng-model="courseCatalog">
+
+		<ul>
+			<li ng-repeat="course in courses | filter: courseCatalog">
+				<div>
+					{{course.subject}} {{course.catalog_number}}
+				</div>
+			</li>
+		</ul>
+
 		{{input}}
 	</div>
 </body>
