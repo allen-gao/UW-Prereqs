@@ -1,4 +1,4 @@
-angular.module('prereqsApp').controller('courseModalCtrl', function ($scope, $modalInstance, course) {
+angular.module('prereqsApp').controller('courseModalCtrl', function ($scope, $modalInstance, $http, $q, course) {
 
 	var makeAPICall = function (callString) { // example of callString: '/codes/subjects'
 		var response = $q.defer();
@@ -7,6 +7,11 @@ angular.module('prereqsApp').controller('courseModalCtrl', function ($scope, $mo
 		});
 		return response.promise;
 	}
+	makeAPICall('/courses/' + course.subject + '/' + course.catalog_number + '/prerequisites').then(function (response) {
+		$scope.prereqsList = response.data.data;
+		console.log($scope.prereqsList);
+	});
+
 	$scope.ok = function () {
 		$modalInstance.dismiss('ok');
 	};
