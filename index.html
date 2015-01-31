@@ -23,7 +23,7 @@
 
 		<ul>
 			<li ng-repeat="course in courses | filter: courseCatalog">
-				<div>
+				<div ng-click="openCourseModal(course)">
 					{{course.subject}} {{course.catalog_number}}
 				</div>
 			</li>

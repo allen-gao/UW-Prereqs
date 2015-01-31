@@ -20,17 +20,19 @@ angular.module('prereqsApp', ['ui.bootstrap']).controller('prereqsCtrl', functio
     })
   }
 
-  $scope.openCourseModal = function () {
-    	var modalInstance = $modal.open({
-    		templateUrl: '../templates/courseModal.html',
-    		controller: 'courseModalCtrl',
-      /*
-      resolve: {
-        items: function () {
-          return $scope.items;
+  $scope.test = "aaaaaaa";
+
+
+  $scope.openCourseModal = function (course) {
+    var modalInstance = $modal.open({
+    	templateUrl: '../templates/courseModal.html',
+    	controller: 'courseModalCtrl',
+
+       resolve: {
+         course: function () {
+          return course;
         }
       }
-      */
-  		});
-	}
+    });
+  }
 });
