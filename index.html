@@ -19,7 +19,7 @@
 		</select>
 		<input class="btn btn-default" type="button" value="Submit" ng-click="lookupSubject(selectedSubject)">
 		
-		<input ng-model="courseCatalog">
+		<input ng-model="courseCatalog.catalog_number">
 
 		<ul>
 			<li ng-repeat="course in courses | filter: courseCatalog">
