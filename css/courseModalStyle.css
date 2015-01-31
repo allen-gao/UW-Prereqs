@@ -1,0 +1,21 @@
+.modalContainer {
+	margin: 20px 10px 20px 10px !important;
+}
+
+#courseModalCloseButton {
+	background-color: #337ab7;
+	color: white;
+}
+
+
+#horizontalScroll {
+	white-space: nowrap;
+	width: 400px;
+	overflow-x: auto;
+	background-color: grey;
+}
+
+
+.listItems {
+	display: inline block;
+}
