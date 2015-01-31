@@ -4,11 +4,11 @@ angular.module('prereqsApp', ['ui.bootstrap']).controller('prereqsCtrl', functio
 	$scope.myFunction = function () {
 		alert('fsdgdfgs');
 	}
-	$scope.open = function () {
+	$scope.openCourseModal = function () {
 
     	var modalInstance = $modal.open({
-    		templateUrl: 'templates/modal.html',
-    		controller: 'modalCtrl',
+    		templateUrl: '../templates/courseModal.html',
+    		controller: 'courseModalCtrl',
       /*
       resolve: {
         items: function () {
