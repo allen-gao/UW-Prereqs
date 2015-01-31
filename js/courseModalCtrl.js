@@ -10,22 +10,34 @@ angular.module('prereqsApp').controller('courseModalCtrl', function ($scope, $mo
 
 	//parsePre: Array [Num, String, String....] (Empty String) -> NULL
 	//Effects: Logs the elements in the array
-	var parsePre = function (pre){
+	var parsePre = function (pre, recCall){
 	  var strOfCourses = "";
 	  for(var i = 0; i < pre.length; i++){
 	    if(typeof pre[i] === 'number'){
-	      strOfCourses += "(" + pre[i] + "of: ";
+	    	if(recCall === 1){
+	    		strOfCourses += "(" + pre[i] + "of: ";
+	    	}
 	    }
 	    else if(typeof pre[i] === 'string'){
 	      if(i === pre.length - 1){
 	          strOfCourses += pre[i];
 	      }
 	      else {
-	          strOfCourses += pre[i] + ", \n";
+	      	  if(recCall > 1){
+	      	  	strOfCourses += pre[i] + "/";
+	      	  }
+	      	  else {
+	      	  	strOfCourses += pre[i] + ", ";
+	      	  }
 	      }
 	    }
 	    else {
-	    	strOfCourses += parsePre(pre[i]) + ")";
+	    	if(recCall === 0){
+	    		strOfCourses += parsePre(pre[i], recCall + 1) + ")";
+	    	}
+	    	else {
+	    		strOfCourses += parsePre(pre[i], recCall + 1) + " "; 
+	    	}
 	    }
 	  }
 	  return strOfCourses;
@@ -33,9 +45,7 @@ angular.module('prereqsApp').controller('courseModalCtrl', function ($scope, $mo
 
 	makeAPICall('/courses/' + course.subject + '/' + course.catalog_number + '/prerequisites').then(function (response) {
 		$scope.prereqsList = response.data.data.prerequisites_parsed;
-		console.log($scope.prereqsList);
-		$scope.prereqStr = parsePre($scope.prereqsList);
-		console.log($scope.prereqStr);
+		$scope.prereqStr = parsePre($scope.prereqsList, 0);
 	});
 		
 
