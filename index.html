@@ -14,24 +14,25 @@
 </head>
 
 <body>
-	<div class="container">
-		<h1>uWaterloo Prereqs</h1>
-		<select class="form-control" ng-model="selectedSubject">
-			<option ng-repeat="courseSubject in courseSubjects">{{courseSubject.subject}}</option>
-		</select>
-		<input class="btn btn-default" type="button" value="Submit" ng-click="lookupSubject(selectedSubject)">
-		
-		<input ng-model="courseCatalog.catalog_number">
-
-		<ul>
+	<div class="titleBox">
+			<h1 class="pageTitle">uWaterloo Prereqs</h1>
+		</div>
+	<div class="container-fluid">
+		<div class"allInputs">
+			<select class="form-control" ng-model="selectedSubject">
+				<option>Select a Subject</option>
+				<option ng-repeat="courseSubject in courseSubjects">{{courseSubject.subject}}</option>
+			</select>
+			<input class="txtbox" ng-model="courseCatalog.catalog_number" placeholder="Course ID">
+			<input id="sub" class="btn btn-default" type="button" value="Submit" ng-click="lookupSubject(selectedSubject)">
+		</div>
+		<ul class="listCourse">
 			<li ng-repeat="course in courses | filter: courseCatalog">
 				<div ng-click="openCourseModal(course)">
 					{{course.subject}} {{course.catalog_number}}
 				</div>
 			</li>
 		</ul>
-
-		{{input}}
 	</div>
 </body>
 

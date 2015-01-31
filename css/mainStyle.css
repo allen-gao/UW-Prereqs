@@ -1,0 +1,51 @@
+/*Style page for the index*/
+
+.titleBox {
+	width: 100%;
+	background-color: #5cb85c;
+	height: 100px;
+	margin: auto;
+	padding-top: 25px;
+	color: white;
+
+}
+
+.pageTitle {
+	text-align: center;
+	margin: auto;
+}
+
+.container-fluid{
+	margin-top: 40px;
+}
+
+.form-control{
+	float: left;
+	width: 30%;
+	height: 75px;
+	font-size: 2em;
+	margin-left: 20px;
+	margin-right: 10px;
+}
+
+.txtbox {
+	width: 30%;
+	height: 75px;
+	font-size: 1.9em;
+	margin: auto 10px;
+	padding-left: 10px;
+	margin-bottom: 20px;
+}
+
+#sub {
+	width: 30%;
+	height: 75px;
+	font-size: 1.8em;
+	margin-top: -10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.listCourse {
+	list-style-type: none;
+}
