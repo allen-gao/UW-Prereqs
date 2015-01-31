@@ -1,8 +1,12 @@
-<div  class="container-fluid">
+<div class="container-fluid modalContainer">
 	<h2 class="courseHead">{{course.subject}} {{course.catalog_number}} <h2><br><br>
-	<h2>{{prereqStr}}<h2>
+	<!--<h2>{{prereqStr}}<h2>-->
 	<br>
+	<ul class="list-inline" id="horizontalScroll">
+		<li class="listItems" ng-repeat="course in courses">
+			<div>{{course}}</div>
+		</li>
+	</ul>
 	<br>
-    <button class="btn btn-default" ng-click="cancel()">Cancel</button>
-    <button class="btn btn-default" ng-click="ok()">OK</button>
+    <button class="btn btn-default pull-right" id="courseModalCloseButton" ng-click="close()">Close</button>
 </div>
