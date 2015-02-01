@@ -1,7 +1,6 @@
 angular.module('prereqsApp').controller('courseModalCtrl', function ($scope, $modalInstance, $http, $q, course) {
 	$scope.course = course;
-
-	$scope.courses = ['CS135', 'CS136', 'CS246', 'CS251', 'CS245', 'CS211', 'CS222', 'CS333', 'CS444', 'CS555', 'CS666', 'CS777'];
+	$scope.prereqsList = [];
 	var makeAPICall = function (callString) { // example of callString: '/codes/subjects'
 		var response = $q.defer();
 		$http.get('https://api.uwaterloo.ca/v2' + callString + '.json?key=841086bf587e62c3eee2711d22043b27').then(function(data) {

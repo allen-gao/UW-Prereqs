@@ -9,13 +9,12 @@
 
 .courseHead {
 	text-align: center;
+	font-size: 2em;
 }
 
 #horizontalScroll {
 	white-space: nowrap;
 	overflow-x: auto;
-	background-color: #5cb85c;
-	color: white;
 }
 
 #horizontalScrollDiv {
@@ -29,4 +28,5 @@
 
 .listItems {
 	display: inline block;
+	font-size: 2em;
 }
