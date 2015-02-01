@@ -1,17 +1,17 @@
 <div class="container-fluid modalContainer" id="modalCon">
-	<h1 class="courseHead">{{course.subject}} {{course.catalog_number}} <h1>
+	<h1 class="courseHead">{{course.subject}} {{course.catalog_number}} </h1>
 	<!--<h2>{{prereqStr}}<h2>-->
 	<br>
+	<h2>Prerequisites:</h2>
 	<div id="horizontalSlider">
 		<div id="horizontalScrollDiv">
 			<ul class="list-inline" id="horizontalScroll">
-				<li class="listItems" ng-repeat="courses in prereqArr">
 				<li class="listItems">
-					<div>{{courses}}</div>
+					<div>{{prereqsStr}}</div>
 				</li>
 			</ul>
 		</div>
 	</div>
 	<br>
-    <button class="btn btn-default pull-right" id="courseModalCloseButton" ng-click="fn()">Close</button>
+    <button class="btn btn-default pull-right" id="courseModalCloseButton" ng-click="close()">Close</button>
 </div>
