@@ -4,7 +4,6 @@
 	<!-- library files -->
 	<script src="lib/angular.min.js"></script>
 	<script src="lib/ui-bootstrap-tpls-0.12.0.min.js"></script>
-	<script src="lib/jquery-1.11.2.min.js"></script>
 	<!-- controllers -->
 	<script src="js/prereqsCtrl.js"></script>
 	<script src="js/courseModalCtrl.js"></script>
@@ -31,7 +30,7 @@
 		<ul class="list-inline">
 			<li ng-repeat="course in courses | filter: courseCatalog" class="courseLI">
 				<div ng-click="openCourseModal(course)">
-					<strong>{{course.subject}} {{course.catalog_number}}</strong>
+					{{course}}
 				</div>
 			</li>
 		</ul>
