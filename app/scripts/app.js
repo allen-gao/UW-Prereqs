@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('prereqsAppApp', [
+  .module('prereqsApp', [
     'ngCookies',
     'ngRoute'
   ])
